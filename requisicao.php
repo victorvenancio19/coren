@@ -1,18 +1,18 @@
 <?php
 
 // URL DO DETRAN 
-$soapUrl = 'http://10.200.96.244:8080/Servico.asmx?op=consultarCPF';
+$soapUrl = 'http://10.200.96.170:8080/Servico.asmx?op=consultarCPF';
 
 // URL DO DETRAN BUSCAR PROCESSADOS
-$soapUrlProcessados = 'http://10.200.96.244:8181/Servico.asmx?op=BuscarProcessados';
+$soapUrlProcessados = 'http://10.200.96.170:8181/Servico.asmx?op=BuscarProcessados';
 
 $cnpj = 27149095000166;
-$chave = 'tX8a9a0mFYG46o09';
+$chave = 'LvfjPtEjR892sET1';
 $perfil = 60;
 $idCidadao = 200650;
-$rg = 848723;
+$rg = 284150026;
 $idPesquisador = 1;
-$cpf = 00000000000; 
+$cpf = 15376746763; 
 $nomePai ='ABILIO ALMEIDA';
 $nomeMae='ELZA PEREIRA DE ALMEIDA';
 $dataNascimento='NÃO IDÊNTIFICADO';
@@ -29,20 +29,16 @@ $urlProcessados = $soapUrlProcessados;
 $xml_post_string = '<?xml version="1.0" encoding="utf-8"?>
 <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
   <soap12:Body>
-    <consultarNome xmlns="http://www.detran.rj.gov.br">
+    <consultarRG xmlns="http://www.detran.rj.gov.br">
       <CNPJ>'.$cnpj.'</CNPJ>
       <chave>'.$chave.'</chave>
       <perfil>'.$perfil.'</perfil>
       <IDCidadao>'.$idCidadao.'</IDCidadao>
-      <nomeCidadao>'.$nomeCidadao.'</nomeCidadao>
-      <nomePai>'.$nomePai.'</nomePai>
-      <nomeMae>'.$nomeMae.'</nomeMae>
-      <dtNascimento>'.$dataNascimento.'</dtNascimento>
-      <IDPesquisador>1</IDPesquisador>
-    </consultarNome>
+      <RG>'.$rg.'</RG>
+      <IDPesquisador>'.$idPesquisador.'</IDPesquisador>
+    </consultarRG>
   </soap12:Body>
 </soap12:Envelope>';
-  
   
   
   
@@ -72,7 +68,7 @@ $xml_post_string = '<?xml version="1.0" encoding="utf-8"?>
 
 
 /*
- //VARIÁVEL COM O XML PARA A CHAMADA CONSULTAR NOME
+ //VARIÁVEL COM O XML PARA A CHAMADA CONSULTAR CPF
  $xml_post_string = '<?xml version="1.0" encoding="utf-8"?>
  <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
    <soap12:Body>
@@ -85,7 +81,7 @@ $xml_post_string = '<?xml version="1.0" encoding="utf-8"?>
        <IDPesquisador>'.$idPesquisador.'</IDPesquisador>
      </consultarCPF >
    </soap12:Body>
- </soap12:Envelope>';*/
+ </soap12:Envelope>';
 
 /*
 //VARIÁVEL COM O XML PARA A CHAMADA CONSULTAR RG
